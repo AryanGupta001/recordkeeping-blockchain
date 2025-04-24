@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Blockchain Records</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">BlockEd</div>
+      <div class="nav-item active" data-section="search"><i class="bi bi-search"></i> Search Records</div>
+      <div class="nav-item" data-section="add"><i class="bi bi-plus-circle"></i> Add Record</div>
+      <div class="nav-item" data-section="verify"><i class="bi bi-shield-check"></i> Verify Chain</div>
+      <div class="nav-item" data-section="all"><i class="bi bi-list-ul"></i> All Records</div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <!-- Header -->
+      <div class="header">
+        <h1>Student Blockchain Records</h1>
+        <button id="darkModeToggle" class="toggle-btn"><i class="bi bi-moon-fill"></i></button>
+      </div>
+
+      <!-- Search Section -->
+      <section id="searchSection" class="section">
+        <div class="card-custom search-bar">
+          <input type="text" id="searchInput" placeholder="Search by ID or Name..." />
+          <button id="searchButton"><i class="bi bi-search"></i> Search</button>
+        </div>
+        <div class="records-grid mt-4" id="searchResults"></div>
+      </section>
+
+      <!-- Add Record Section -->
+      <section id="addSection" class="section" style="display:none;">
+        <div class="card-custom">
+          <h3><i class="bi bi-plus-circle"></i> Add New Student</h3>
+          <form id="recordForm">
+            <div class="form-group">
+              <label for="studentName">Name</label>
+              <input type="text" id="studentName" required />
+            </div>
+            <div class="form-group">
+              <label for="studentId">ID</label>
+              <input type="text" id="studentId" required />
+            </div>
+            <div class="form-group">
+              <label for="courseDetails">Course</label>
+              <input type="text" id="courseDetails" required />
+            </div>
+            <div class="form-group">
+              <label for="grades">Grades</label>
+              <input type="text" id="grades" required />
+            </div>
+            <button type="submit" class="btn-primary-custom">
+              <i class="bi bi-plus-circle"></i> Add Record
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Verify Section -->
+      <section id="verifySection" class="section" style="display:none;">
+        <div class="card-custom d-flex align-items-center justify-content-between">
+          <h3><i class="bi bi-shield-check"></i> Blockchain Status</h3>
+          <button id="verifyChain" class="btn-primary-custom"><i class="bi bi-check-circle"></i> Verify</button>
+        </div>
+        <div id="chainStatus" class="section mt-3"></div>
+      </section>
+
+      <!-- All Records Section -->
+      <section id="allSection" class="section" style="display:none;">
+        <div class="records-grid" id="recordsList"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Delete Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirm Deletion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">Are you sure you want to delete this record?</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" id="confirmDelete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

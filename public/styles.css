@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f2f2f7;
+    color: #333;
+  }
+  .app-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  /* Sidebar */
+  .sidebar {
+    width: 220px;
+    background: #1e1e2f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .sidebar .logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+  }
+  .sidebar .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .sidebar .nav-item:hover {
+    background: #343454;
+  }
+  .sidebar .nav-item i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+  .sidebar .nav-item.active {
+    background: #4b6cb7;
+  }
+  /* Main content */
+  .content {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    color: #fff;
+  }
+  .header h1 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.8rem;
+  }
+  .toggle-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .toggle-btn:hover {
+    transform: scale(1.1);
+  }
+  /* Sections */
+  .section {
+    padding: 20px 30px;
+    flex: none;
+  }
+  .card-custom {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* Search Bar */
+  .search-bar {
+    display: flex;
+    gap: 10px;
+  }
+  .search-bar input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+  .search-bar input:focus {
+    border-color: #4b6cb7;
+    outline: none;
+  }
+  .search-bar button {
+    padding: 12px 20px;
+    border: none;
+    background: #4b6cb7;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+  .search-bar button:hover {
+    background: #3a549b;
+  }
+  /* Form styles */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus {
+    border-color: #4b6cb7;
+    outline: none;
+  }
+  .btn-primary-custom {
+    background: #4b6cb7;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+  .btn-primary-custom:hover {
+    background: #3a549b;
+  }
+  /* Records list */
+  .records-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .record-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  .record-card:hover {
+    transform: translateY(-4px);
+  }
+  .record-card h5 {
+    margin: 0 0 10px;
+    font-weight: 500;
+  }
+  .record-card .badge-custom {
+    background: #4b6cb7;
+    color: #fff;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    margin-right: 6px;
+  }
+  .record-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  .record-card ul li {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+  .record-card .timestamp {
+    font-size: 0.8rem;
+    color: #777;
+  }
+  .record-card .delete-btn-custom {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .record-card .delete-btn-custom:hover {
+    color: #c0392b;
+  }
+  /* Block status */
+  .status-box {
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    display: inline-block;
+  }
+  .status-valid {
+    background: #daf5e7;
+    color: #2d7a4b;
+  }
+  .status-invalid {
+    background: #fbe4e4;
+    color: #a1272b;
+  }
